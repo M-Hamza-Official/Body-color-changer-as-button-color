@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    button{
+        width: 70px;
+        margin: 0 auto;
+        padding: 30px;
+        margin-top: 10px;
+    }
+    #green{
+        background-color: green;
+    }
+    #black{
+        background-color: black;
+
+    }
+    #orange{
+        background-color: orange;
+    }
+    #white{
+        background-color: white;
+    }
+</style>
+<body>
+    <div class="container">
+
+        <button id="green"  ></button> 
+        <button   id="black"  ></button>
+        <button   id="white"     >
+
+        </button>
+        <button   id="orange"    > </button>
+
+        <h1  style="color: black;">--You can change color of background according to the button color--</h1>
+    </div>
+    <script>
+        
+        const allButtons = document.querySelectorAll('button');
+        const body = document.querySelector('body')
+        allButtons.forEach((ele)=>{
+console.log(ele);
+ele.addEventListener('click',(e)=>{
+if (e.target.id === 'green' || e.target.id === 'black' || e.target.id === 'orange' || e.target.id === 'white' ) {
+    body.style.backgroundColor = e.target.id;
+    if(e.target.id === 'white'){
+        body.querySelector('h1').style.filter = "none"
+    }else{
+    const header = document.querySelector('h1');
+header.style.filter = "invert(1)";
+    }
+
+}
+
+
+})
+
+        })
+    </script>
+</body>
+
+</html>
