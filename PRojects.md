@@ -73,6 +73,9 @@
         flex-direction: column;
         justify-content: center;
     }
+
+
+
     button{
         width: 70px;
         margin: 0 auto;
@@ -84,6 +87,9 @@
     }
     #black{
         background-color: black;
+
+
+
 
     }
     #orange{
@@ -122,6 +128,8 @@ header.style.filter = "invert(1)";
     }
 
 }
+
+
 
 
 })
