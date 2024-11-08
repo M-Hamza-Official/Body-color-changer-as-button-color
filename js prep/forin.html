@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-In loop</title>
+</head>
+
+<!-- 5. Book Collection
+-1-Description: Set up an object where each property represents a book title, with each value being an object containing the author, genre, and year of publication. Use for...in to list out the books with their details.
+-2-Bonus: Add functionality to filter books by genre or year and display results. -->
+<body>
+    <script>
+const bookCollection = {
+  "The Great Gatsby": { author: "F. Scott Fitzgerald", genre: "Fiction", year: 1925 },
+  "1984": { author: "George Orwell", genre: "Dystopian", year: 1949 },
+  "To Kill a Mockingbird": { author: "Harper Lee", genre: "Fiction", year: 1960 },
+  "Sapiens": { author: "Yuval Noah Harari", genre: "Non-fiction", year: 2011 }
+};
+
+
+function Collectionlist(collection){
+
+ for (const key in collection) {
+    const book = collection[key]
+        console.log(key ,collection[key]); 
+        console.log(`Title : ${key}`);
+        console.log(`Author:${book.author}`);
+        console.log(`genre:${book.genre}`);
+        console.log(`Year:${book.year}`);
+ }
+        
+}
+Collectionlist(bookCollection)
+</script>
+</body>
+</html>

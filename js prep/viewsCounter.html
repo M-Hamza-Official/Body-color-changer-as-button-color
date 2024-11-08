@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View counter</title>
+</head>
+<style>
+    #myVideo , p{margin: auto;
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;}
+</style>
+<body>
+    <video id="myVideo" width="320" height="240" controls>
+        <source src="/ad1 (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Views: <span id="viewCount">0</span></p>
+    <script>
+const video = document.getElementById("myVideo");
+       const videoPlay = document.getElementById("viewCount");
+       const VIEW_COUNT_KEY = "videViewcount";
+       function Loadcountview(){
+const Savedcount = localStorage.getItem(VIEW_COUNT_KEY);
+return Savedcount ? parseInt(Savedcount) : 0 ;
+       }
+       //function to update view count in the localstorage and on page//
+function updateViewcount (){
+    var updatecount = Loadcountview()
+    updatecount++
+    localStorage.setItem(VIEW_COUNT_KEY,updatecount )
+    videoPlay.textContent = updatecount;
+}
+videoPlay.textContent = Loadcountview();
+video.addEventListener('play', () => {
+    if (!sessionStorage.getItem(VIEW_COUNT_KEY)) {
+        updateViewcount();
+        sessionStorage.setItem(VIEW_COUNT_KEY, 'viewed');
+    }
+});
+video.addEventListener('pause', () => {
+    sessionStorage.removeItem(VIEW_COUNT_KEY);
+});
+video.addEventListener('ended', () => {
+    sessionStorage.removeItem(VIEW_COUNT_KEY);
+});
+    </script>
+</body>
+</html>
