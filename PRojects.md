@@ -88,9 +88,6 @@
     #black{
         background-color: black;
 
-
-
-
     }
     #orange{
         background-color: orange;
